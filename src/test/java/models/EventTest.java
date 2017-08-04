@@ -17,5 +17,11 @@ public class EventTest {
         assertEquals(true, testEvent instanceof Event);
     }
 
+    @Test
+    public void newEvent_getsNumberOfGuests_10() throws Exception {
+        Event testEvent = new Event(10, "Light", "Juice bar", "Live band");
+        assertEquals(10, testEvent.getNumGuests());
+    }
+
 
 }
