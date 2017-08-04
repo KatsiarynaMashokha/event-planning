@@ -13,6 +13,7 @@ public class Event {
       this.numGuests = numGuests;
       this.foodType = foodType;
       this.beverageType = beverageType;
+      this.entertainmentType = entertainmentType;
 
     }
 
@@ -29,7 +30,7 @@ public class Event {
     }
 
     public String getEntertainmentType() {
-        return null;
+        return entertainmentType;
     }
 
 }
