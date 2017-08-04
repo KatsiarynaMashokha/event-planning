@@ -33,8 +33,12 @@ public class EventTest {
     public void newEvent_getsBeverageType_JuiceBar() throws Exception {
         Event testEvent = new Event(10, "Light", "Juice bar", "Live band");
         assertEquals("Juice bar", testEvent.getBeverageType());
-
     }
 
+    @Test
+    public void newEvent_getsEntertainmentType_JuiceBar() throws Exception {
+        Event testEvent = new Event(10, "Light", "Juice bar", "Live band");
+        assertEquals("Live band", testEvent.getEntertainmentType());
+    }
 
 }

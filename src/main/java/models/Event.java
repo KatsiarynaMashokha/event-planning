@@ -7,6 +7,7 @@ public class Event {
     private int numGuests;
     private String foodType;
     private String beverageType;
+    private String entertainmentType;
 
     public Event(int numGuests, String foodType, String beverageType, String entertainmentType) {
       this.numGuests = numGuests;
@@ -25,6 +26,10 @@ public class Event {
 
     public String getBeverageType() {
         return beverageType;
+    }
+
+    public String getEntertainmentType() {
+        return null;
     }
 
 }
