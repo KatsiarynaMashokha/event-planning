@@ -123,6 +123,8 @@ public class Event {
             if (couponCode.equals("SAVE40")) {
                 discount = 40;
             }
+        } else {
+            discount = 0;
         }
         return discount;
     }

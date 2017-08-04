@@ -77,9 +77,22 @@ public class EventTest {
     }
 
     @Test
+    public void specialOffers_guests150FullDinnerAlcoholicBeverages_NoFreeDj() throws Exception {
+        Event testEvent = new Event(149, FoodType.FULL_DINNER, BeverageType.ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS, EntertainmentType.NONE);
+        testEvent.specialOffers("FREEDJ");
+        assertEquals(EntertainmentType.NONE, testEvent.getEntertainmentType());
+    }
+
+    @Test
     public void specialOffers_guests10FullDinnerLiveMusic_40Off() throws Exception {
         Event testEvent = new Event(10, FoodType.FULL_DINNER, BeverageType.COFFEE_AND_TEA, EntertainmentType.LIVE_MUSIC);
         assertEquals(40,  testEvent.specialOffers("SAVE40"), 0);
+    }
+
+    @Test
+    public void specialOffers_guests9FullDinnerLiveMusic_No40Off() throws Exception {
+        Event testEvent = new Event(9, FoodType.FULL_DINNER, BeverageType.COFFEE_AND_TEA, EntertainmentType.LIVE_MUSIC);
+        assertEquals(0,  testEvent.specialOffers("SAVE40"), 0);
     }
 
 
