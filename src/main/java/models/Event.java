@@ -5,13 +5,14 @@ package models;
  */
 public class Event {
     public enum FoodType {LIGHT_SNACKS, DESSERT_ONLY, FULL_DINNER, SALAD_BAR, FRUIT_BAR, CUSTOMER_OWN_FOOD};
-    public enum BeverageType{COFFEE_AND_TEA, JUICE_BAR, NON_ALCOHOLIC_BEVERAGES, ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS}
+    public enum BeverageType {COFFEE_AND_TEA, JUICE_BAR, NON_ALCOHOLIC_BEVERAGES, ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS};
+    public enum EntertainmentType {LIVE_MUSIC, DJ, KIDS, NONE};
     private int numGuests;
     private FoodType foodType;
     private BeverageType beverageType;
-    private String entertainmentType;
+    private EntertainmentType entertainmentType;
 
-    public Event(int numGuests, FoodType foodType, BeverageType beverageType, String entertainmentType) {
+    public Event(int numGuests, FoodType foodType, BeverageType beverageType, EntertainmentType entertainmentType) {
       this.numGuests = numGuests;
       this.foodType = foodType;
       this.beverageType = beverageType;
@@ -31,7 +32,7 @@ public class Event {
         return beverageType;
     }
 
-    public String getEntertainmentType() {
+    public EntertainmentType getEntertainmentType() {
         return entertainmentType;
     }
 
@@ -85,6 +86,11 @@ public class Event {
                 throw new IllegalArgumentException("Wrong choice");
         }
         return bevaragePricePerPerson;
+    }
+
+    public double calculateEntertainmentPrice() {
+        double entertainmentPricePerPerson;
+        return 0;
     }
 
 
