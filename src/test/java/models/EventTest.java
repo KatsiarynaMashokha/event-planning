@@ -69,4 +69,11 @@ public class EventTest {
         assertEquals(290, testEvent.calculateTotalPrice(), 0);
     }
 
+    @Test
+    public void specialOffers_guests150FullDinnerAlcoholicBeverages_freeDj() throws Exception {
+        Event testEvent = new Event(150, FoodType.FULL_DINNER, BeverageType.ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS, EntertainmentType.NONE);
+        testEvent.specialOffers("FREEDJ");
+        assertEquals(EntertainmentType.DJ, testEvent.getEntertainmentType());
+    }
+
 }

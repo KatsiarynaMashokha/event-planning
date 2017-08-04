@@ -20,6 +20,10 @@ public class Event {
 
     }
 
+    public void setEntertainmentType(EntertainmentType entertainmentType) {
+        this.entertainmentType = entertainmentType;
+    }
+
     public int getNumGuests() {
         return numGuests;
     }
@@ -108,4 +112,15 @@ public class Event {
     public double calculateTotalPrice() {
         return numGuests * (calculateFoodPrice() + calculateBeveragePrice() + calculateEntertainmentPrice());
     }
+
+    public double specialOffers(String couponCode) {
+        double discount = 0;
+        if (numGuests >= 150 && foodType == FoodType.FULL_DINNER && beverageType == BeverageType.ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS) {
+            if (couponCode.equals("FREEDJ")) {
+
+            }
+        }
+        return 0;
+    }
+
 }
