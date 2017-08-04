@@ -21,4 +21,8 @@ public class Event {
         return foodType;
     }
 
+    public String getBeverageType() {
+        return null;
+    }
+
 }
