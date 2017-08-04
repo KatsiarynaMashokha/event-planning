@@ -34,7 +34,7 @@ public class Event {
     }
 
     public double calculateGuestsPrice() {
-        return 0;
+        return numGuests * 10;
     }
 
 
