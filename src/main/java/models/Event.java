@@ -121,10 +121,10 @@ public class Event {
             }
         } else if (numGuests >= 10 && foodType == FoodType.FULL_DINNER && entertainmentType == EntertainmentType.LIVE_MUSIC) {
             if (couponCode.equals("SAVE40")) {
-
+                discount = 40;
             }
         }
-        return 0;
+        return discount;
     }
 
 }
