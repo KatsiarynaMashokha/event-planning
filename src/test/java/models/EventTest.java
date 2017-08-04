@@ -23,5 +23,11 @@ public class EventTest {
         assertEquals(10, testEvent.getNumGuests());
     }
 
+    @Test
+    public void newEvent_getsFoodType_Light() throws Exception {
+        Event testEvent = new Event(10, "Light", "Juice bar", "Live band");
+        assertEquals("Light", testEvent.getFoodType());
+    }
+
 
 }

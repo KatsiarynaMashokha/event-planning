@@ -15,4 +15,8 @@ public class Event {
         return numGuests;
     }
 
+    public String getFoodType() {
+        return null;
+    }
+
 }
