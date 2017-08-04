@@ -6,10 +6,12 @@ package models;
 public class Event {
     private int numGuests;
     private String foodType;
+    private String beverageType;
 
     public Event(int numGuests, String foodType, String beverageType, String entertainmentType) {
       this.numGuests = numGuests;
       this.foodType = foodType;
+      this.beverageType = beverageType;
 
     }
 
@@ -22,7 +24,7 @@ public class Event {
     }
 
     public String getBeverageType() {
-        return null;
+        return beverageType;
     }
 
 }
