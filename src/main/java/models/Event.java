@@ -90,7 +90,23 @@ public class Event {
 
     public double calculateEntertainmentPrice() {
         double entertainmentPricePerPerson;
-        return 0;
+        switch (entertainmentType) {
+            case LIVE_MUSIC:
+                entertainmentPricePerPerson = 12;
+                break;
+            case DJ:
+                entertainmentPricePerPerson = 7;
+                break;
+            case KIDS:
+                entertainmentPricePerPerson = 8;
+                break;
+            case NONE:
+                entertainmentPricePerPerson = 0;
+                break;
+            default:
+                throw new IllegalArgumentException("Wrong choice");
+        }
+        return entertainmentPricePerPerson;
     }
 
 
