@@ -33,4 +33,9 @@ public class Event {
         return entertainmentType;
     }
 
+    public double calculateGuestsPrice() {
+        return 0;
+    }
+
+
 }

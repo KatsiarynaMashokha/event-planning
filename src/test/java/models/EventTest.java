@@ -41,4 +41,10 @@ public class EventTest {
         assertEquals("Live band", testEvent.getEntertainmentType());
     }
 
+    @Test
+    public void newEvent_calculateGuestsPrice_100() throws Exception {
+        Event testEvent = new Event(10, "Light", "Juice bar", "Live band");
+        assertEquals(100, testEvent.calculateGuestsPrice(), 0);
+    }
+
 }
