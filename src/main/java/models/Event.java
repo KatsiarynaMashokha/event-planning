@@ -119,6 +119,10 @@ public class Event {
             if (couponCode.equals("FREEDJ")) {
                 setEntertainmentType(EntertainmentType.DJ);
             }
+        } else if (numGuests >= 10 && foodType == FoodType.FULL_DINNER && entertainmentType == EntertainmentType.LIVE_MUSIC) {
+            if (couponCode.equals("SAVE40")) {
+
+            }
         }
         return 0;
     }

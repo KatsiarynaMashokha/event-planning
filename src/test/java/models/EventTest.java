@@ -76,4 +76,11 @@ public class EventTest {
         assertEquals(EntertainmentType.DJ, testEvent.getEntertainmentType());
     }
 
+    @Test
+    public void specialOffers_guests10FullDinnerLiveMusic_40Off() throws Exception {
+        Event testEvent = new Event(10, FoodType.FULL_DINNER, BeverageType.COFFEE_AND_TEA, EntertainmentType.LIVE_MUSIC);
+        assertEquals(40,  testEvent.specialOffers("SAVE40"), 0);
+    }
+
+
 }
