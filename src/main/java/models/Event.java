@@ -117,7 +117,7 @@ public class Event {
         double discount = 0;
         if (numGuests >= 150 && foodType == FoodType.FULL_DINNER && beverageType == BeverageType.ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS) {
             if (couponCode.equals("FREEDJ")) {
-
+                setEntertainmentType(EntertainmentType.DJ);
             }
         }
         return 0;
