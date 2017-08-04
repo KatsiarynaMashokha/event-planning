@@ -11,13 +11,16 @@ public class Event {
     private FoodType foodType;
     private BeverageType beverageType;
     private EntertainmentType entertainmentType;
+    private int defaultNumberOfGuests = 1;
 
     public Event(int numGuests, FoodType foodType, BeverageType beverageType, EntertainmentType entertainmentType) {
-      this.numGuests = numGuests;
+        if (numGuests <= 0 || numGuests > 300) {
+            this.numGuests = defaultNumberOfGuests;
+        }
+      this.numGuests =  numGuests;
       this.foodType = foodType;
       this.beverageType = beverageType;
       this.entertainmentType = entertainmentType;
-
     }
 
     public void setEntertainmentType(EntertainmentType entertainmentType) {
