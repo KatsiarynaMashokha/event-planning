@@ -106,6 +106,6 @@ public class Event {
     }
 
     public double calculateTotalPrice() {
-        return 0;
+        return numGuests * (calculateFoodPrice() + calculateBeveragePrice() + calculateEntertainmentPrice());
     }
 }
