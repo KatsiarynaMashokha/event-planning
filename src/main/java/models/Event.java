@@ -5,13 +5,13 @@ package models;
  */
 public class Event {
     public enum FoodType {LIGHT_SNACKS, DESSERT_ONLY, FULL_DINNER, SALAD_BAR, FRUIT_BAR, CUSTOMER_OWN_FOOD};
-    public enum BeverageType{COFFEE_AND_TEA, JUICE_BAR, NO_ALCOHOL, ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS}
+    public enum BeverageType{COFFEE_AND_TEA, JUICE_BAR, NON_ALCOHOLIC_BEVERAGES, ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS}
     private int numGuests;
     private FoodType foodType;
-    private String beverageType;
+    private BeverageType beverageType;
     private String entertainmentType;
 
-    public Event(int numGuests, FoodType foodType, String beverageType, String entertainmentType) {
+    public Event(int numGuests, FoodType foodType, BeverageType beverageType, String entertainmentType) {
       this.numGuests = numGuests;
       this.foodType = foodType;
       this.beverageType = beverageType;
@@ -27,7 +27,7 @@ public class Event {
         return foodType;
     }
 
-    public String getBeverageType() {
+    public BeverageType getBeverageType() {
         return beverageType;
     }
 
@@ -63,11 +63,28 @@ public class Event {
             default:
                 throw new IllegalArgumentException("Wrong choice");
         }
-        return numGuests * foodPricePerPerson;
+        return foodPricePerPerson;
     }
 
     public double calculateBeveragePrice() {
-        return 0;
+        double bevaragePricePerPerson;
+        switch (beverageType) {
+            case COFFEE_AND_TEA:
+                bevaragePricePerPerson = 3;
+                break;
+            case JUICE_BAR:
+                bevaragePricePerPerson = 7;
+                break;
+            case NON_ALCOHOLIC_BEVERAGES:
+                bevaragePricePerPerson = 2;
+                break;
+            case ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS:
+                bevaragePricePerPerson = 10;
+                break;
+            default:
+                throw new IllegalArgumentException("Wrong choice");
+        }
+        return bevaragePricePerPerson;
     }
 
 
