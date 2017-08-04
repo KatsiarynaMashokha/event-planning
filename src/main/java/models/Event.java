@@ -5,9 +5,11 @@ package models;
  */
 public class Event {
     private int numGuests;
+    private String foodType;
 
     public Event(int numGuests, String foodType, String beverageType, String entertainmentType) {
       this.numGuests = numGuests;
+      this.foodType = foodType;
 
     }
 
@@ -16,7 +18,7 @@ public class Event {
     }
 
     public String getFoodType() {
-        return null;
+        return foodType;
     }
 
 }
