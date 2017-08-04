@@ -28,7 +28,7 @@ public class EventTest {
     }
 
     @Test
-    public void newEvent_getsFoodType_Light() throws Exception {
+    public void newEvent_getsFoodType_SaladBar() throws Exception {
         Event testEvent = new Event(10, FoodType.SALAD_BAR, BeverageType.JUICE_BAR, EntertainmentType.LIVE_MUSIC);
         assertEquals(FoodType.SALAD_BAR, testEvent.getFoodType());
     }
@@ -46,12 +46,6 @@ public class EventTest {
     }
 
     @Test
-    public void newEvent_calculateGuestsPrice_100() throws Exception {
-        Event testEvent = new Event(10, FoodType.SALAD_BAR, BeverageType.JUICE_BAR, EntertainmentType.LIVE_MUSIC);
-        assertEquals(100, testEvent.calculateGuestsPrice(), 0);
-    }
-
-    @Test
     public void newEvent_calculateFoodPrice_10() throws Exception {
         Event testEvent = new Event(10, FoodType.SALAD_BAR, BeverageType.JUICE_BAR, EntertainmentType.LIVE_MUSIC);
         assertEquals(10, testEvent.calculateFoodPrice(), 0);
@@ -64,10 +58,15 @@ public class EventTest {
     }
 
     @Test
-    public void newEvent_calculateEntertainmentPrice_7() throws Exception {
+    public void newEvent_calculateEntertainmentPrice_12() throws Exception {
         Event testEvent = new Event(10, FoodType.SALAD_BAR, BeverageType.JUICE_BAR, EntertainmentType.LIVE_MUSIC);
         assertEquals(12, testEvent.calculateEntertainmentPrice(), 0);
     }
 
+    @Test
+    public void newEvent_calculateTotalPrice_290() throws Exception {
+        Event testEvent = new Event(10, FoodType.SALAD_BAR, BeverageType.JUICE_BAR, EntertainmentType.LIVE_MUSIC);
+        assertEquals(290, testEvent.calculateTotalPrice(), 0);
+    }
 
 }

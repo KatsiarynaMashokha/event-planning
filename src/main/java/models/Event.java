@@ -36,10 +36,6 @@ public class Event {
         return entertainmentType;
     }
 
-    public double calculateGuestsPrice() {
-        return numGuests * 10;
-    }
-
     public double calculateFoodPrice() {
         double foodPricePerPerson;
         switch (foodType) {
@@ -109,5 +105,7 @@ public class Event {
         return entertainmentPricePerPerson;
     }
 
-
+    public double calculateTotalPrice() {
+        return 0;
+    }
 }
