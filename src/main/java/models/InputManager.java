@@ -2,6 +2,7 @@ package models;
 
 import java.util.Scanner;
 import models.Event.FoodType;
+import models.Event.BeverageType;
 
 /**
  * Created by katsiarynamashokha on 8/4/17.
@@ -63,5 +64,31 @@ public class InputManager {
             }
         }
         return foodType;
+    }
+
+    public BeverageType validateBeverageType() {
+        BeverageType beverageType = null;
+        System.out.println("Please enter a beverage option for your event: \n* coffee and tea \n* juice bar \n* non-alcoholic beverages \n* alcoholic beverages");
+        while (beverageType == null) {
+            String food = scanner.nextLine();
+            switch (food) {
+                case "coffee and tea":
+                    beverageType = BeverageType.COFFEE_AND_TEA;
+                    break;
+                case "juice bar":
+                    beverageType = BeverageType.JUICE_BAR;
+                    break;
+                case "non-alcoholic beverages":
+                    beverageType = BeverageType.NON_ALCOHOLIC_BEVERAGES;
+                    break;
+                case "alcoholic beverages":
+                    beverageType = BeverageType.ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS;
+                    break;
+                default:
+                    System.out.println("Please enter a beverage choice");
+                    break;
+            }
+        }
+        return beverageType;
     }
 }

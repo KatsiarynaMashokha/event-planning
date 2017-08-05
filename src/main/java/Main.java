@@ -13,12 +13,14 @@ public class Main {
     public static void main(String[] args) {
         int numGuests = 0;
         Event.FoodType foodType = null;
+        Event.BeverageType beverageType = null;
         InputManager inputManager = new InputManager();
 
-        System.out.println("Welcome to Miracle events! Let's get started with planning your event!. We need to collect some information about the event.");
+        System.out.println("Welcome to Miracle events! Let's get started with planning your event! We need to collect some information about the event.");
 
         numGuests = inputManager.validateNumberOfGuests();
         foodType = inputManager.validateFoodType();
+        beverageType = inputManager.validateBeverageType();
     }
 }
 
