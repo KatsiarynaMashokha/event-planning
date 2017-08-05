@@ -11,18 +11,23 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
-        int numGuests = 0;
-        Event.FoodType foodType = null;
-        Event.BeverageType beverageType = null;
-        Event.EntertainmentType entertainmentType = null;
         InputManager inputManager = new InputManager();
 
         System.out.println("Welcome to Miracle events! Let's get started with planning your event! We need to collect some information about the event.");
 
-        numGuests = inputManager.validateNumberOfGuests();
-        foodType = inputManager.validateFoodType();
-        beverageType = inputManager.validateBeverageType();
-        entertainmentType = inputManager.validateEntertainmentType();
+        int numGuests = inputManager.validateNumberOfGuests();
+        Event.FoodType foodType = inputManager.validateFoodType();
+        Event.BeverageType beverageType = inputManager.validateBeverageType();
+        Event.EntertainmentType entertainmentType = inputManager.validateEntertainmentType();
+
+        Event event = new Event(numGuests, foodType, beverageType, entertainmentType);
+
+        double totalPrice = event.calculateTotalPrice();
+        System.out.printf("Your current total is $%.2f\n", totalPrice);
+        double discount = event.specialOffers(inputManager.getDiscountCode());
+        totalPrice -= discount;
+        System.out.printf("Your discount is $%.2f\n", discount);
+        System.out.printf("Your final total is $%.2f\n", totalPrice);
     }
 }
 

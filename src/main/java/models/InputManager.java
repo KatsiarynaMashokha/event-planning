@@ -118,4 +118,9 @@ public class InputManager {
         }
         return entertainmentType;
     }
+
+    public String getDiscountCode() {
+        System.out.println("If you have a coupon code, enter it now. Otherwise enter 'q': ");
+        return scanner.nextLine();
+    }
 }

@@ -121,13 +121,17 @@ public class Event {
         if (numGuests >= 150 && foodType == FoodType.FULL_DINNER && beverageType == BeverageType.ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS) {
             if (couponCode.equals("FREEDJ")) {
                 setEntertainmentType(EntertainmentType.DJ);
+                System.out.println("You got free DJ services!");
             }
         } else if (numGuests >= 10 && foodType == FoodType.FULL_DINNER && entertainmentType == EntertainmentType.LIVE_MUSIC) {
             if (couponCode.equals("SAVE40")) {
                 discount = 40;
             }
-        } else {
-            discount = 0;
+        } else if(couponCode.equals("q")) {
+            System.out.println("No code entered.");
+        }
+        else {
+            System.out.println("Not a valid coupon code.");
         }
         return discount;
     }
