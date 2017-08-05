@@ -3,6 +3,7 @@ package models;
 import java.util.Scanner;
 import models.Event.FoodType;
 import models.Event.BeverageType;
+import models.Event.EntertainmentType;
 
 /**
  * Created by katsiarynamashokha on 8/4/17.
@@ -59,7 +60,7 @@ public class InputManager {
                     foodType = FoodType.CUSTOMER_OWN_FOOD;
                     break;
                 default:
-                    System.out.println("Please enter a food choice");
+                    System.out.println("Please enter a food choice!");
                     break;
             }
         }
@@ -70,8 +71,8 @@ public class InputManager {
         BeverageType beverageType = null;
         System.out.println("Please enter a beverage option for your event: \n* coffee and tea \n* juice bar \n* non-alcoholic beverages \n* alcoholic beverages");
         while (beverageType == null) {
-            String food = scanner.nextLine();
-            switch (food) {
+            String beverage = scanner.nextLine();
+            switch (beverage) {
                 case "coffee and tea":
                     beverageType = BeverageType.COFFEE_AND_TEA;
                     break;
@@ -85,10 +86,36 @@ public class InputManager {
                     beverageType = BeverageType.ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS;
                     break;
                 default:
-                    System.out.println("Please enter a beverage choice");
+                    System.out.println("Please enter a beverage choice!");
                     break;
             }
         }
         return beverageType;
+    }
+
+    public EntertainmentType validateEntertainmentType() {
+        EntertainmentType entertainmentType = null;
+        System.out.println("Please enter an entertainment option for your event: \n* live music \n* dj \n* for kids \n* none");
+        while (entertainmentType == null) {
+            String entertainment = scanner.nextLine();
+            switch (entertainment) {
+                case "live music":
+                    entertainmentType = EntertainmentType.LIVE_MUSIC;
+                    break;
+                case "dj":
+                    entertainmentType = EntertainmentType.DJ;
+                    break;
+                case "for kids":
+                    entertainmentType = EntertainmentType.FOR_KIDS;
+                    break;
+                case "none":
+                    entertainmentType = EntertainmentType.NONE;
+                    break;
+                default:
+                    System.out.println("Please enter an entertainment option!");
+                    break;
+            }
+        }
+        return entertainmentType;
     }
 }

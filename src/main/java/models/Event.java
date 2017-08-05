@@ -6,7 +6,7 @@ package models;
 public class Event {
     public enum FoodType {LIGHT_SNACKS, DESSERT_ONLY, FULL_DINNER, SALAD_BAR, FRUIT_BAR, CUSTOMER_OWN_FOOD};
     public enum BeverageType {COFFEE_AND_TEA, JUICE_BAR, NON_ALCOHOLIC_BEVERAGES, ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS};
-    public enum EntertainmentType {LIVE_MUSIC, DJ, KIDS, NONE};
+    public enum EntertainmentType {LIVE_MUSIC, DJ, FOR_KIDS, NONE};
     private int numGuests;
     private FoodType foodType;
     private BeverageType beverageType;
@@ -100,7 +100,7 @@ public class Event {
             case DJ:
                 entertainmentPricePerPerson = 7;
                 break;
-            case KIDS:
+            case FOR_KIDS:
                 entertainmentPricePerPerson = 8;
                 break;
             case NONE:

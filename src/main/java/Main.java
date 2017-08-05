@@ -14,6 +14,7 @@ public class Main {
         int numGuests = 0;
         Event.FoodType foodType = null;
         Event.BeverageType beverageType = null;
+        Event.EntertainmentType entertainmentType = null;
         InputManager inputManager = new InputManager();
 
         System.out.println("Welcome to Miracle events! Let's get started with planning your event! We need to collect some information about the event.");
@@ -21,6 +22,7 @@ public class Main {
         numGuests = inputManager.validateNumberOfGuests();
         foodType = inputManager.validateFoodType();
         beverageType = inputManager.validateBeverageType();
+        entertainmentType = inputManager.validateEntertainmentType();
     }
 }
 
