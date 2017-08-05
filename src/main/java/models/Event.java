@@ -4,9 +4,64 @@ package models;
  * Created by katsiarynamashokha on 8/4/17.
  */
 public class Event {
-    public enum FoodType {LIGHT_SNACKS, DESSERT_ONLY, FULL_DINNER, SALAD_BAR, FRUIT_BAR, CUSTOMER_OWN_FOOD};
-    public enum BeverageType {COFFEE_AND_TEA, JUICE_BAR, NON_ALCOHOLIC_BEVERAGES, ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS};
-    public enum EntertainmentType {LIVE_MUSIC, DJ, FOR_KIDS, NONE};
+    public enum FoodType {
+        LIGHT_SNACKS, DESSERT_ONLY, FULL_DINNER, SALAD_BAR, FRUIT_BAR, CUSTOMER_OWN_FOOD;
+        String value() {
+            switch (this) {
+                case FULL_DINNER:
+                    return "full dinner";
+                case LIGHT_SNACKS:
+                    return "light snacks";
+                case SALAD_BAR:
+                    return "salad bar";
+                case FRUIT_BAR:
+                    return "fruit bar";
+                case CUSTOMER_OWN_FOOD:
+                    return "own food";
+                default:
+                    return "no choice";
+            }
+        }
+    }
+
+    public enum BeverageType {
+        COFFEE_AND_TEA, JUICE_BAR, NON_ALCOHOLIC_BEVERAGES, ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS;
+        String value() {
+            switch (this) {
+                case COFFEE_AND_TEA:
+                    return "cofee and tea";
+                case JUICE_BAR:
+                    return "juice bar";
+                case ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS:
+                    return "alcoholic bevarages and soft drinks";
+                case NON_ALCOHOLIC_BEVERAGES:
+                    return "non-alcoholic beverages";
+                default:
+                    return "no choice made";
+            }
+        }
+
+    }
+
+    public enum EntertainmentType {
+        LIVE_MUSIC, DJ, FOR_KIDS, NONE;
+        String value() {
+            switch (this) {
+                case LIVE_MUSIC:
+                    return "live music";
+                case DJ:
+                    return "dj";
+                case FOR_KIDS:
+                    return "for kids";
+                case NONE:
+                    return "none";
+                default:
+                    return "no choice";
+            }
+        }
+    }
+
+
     private int numGuests;
     private FoodType foodType;
     private BeverageType beverageType;
@@ -17,10 +72,10 @@ public class Event {
         if (numGuests <= 0 || numGuests > 300) {
             this.numGuests = defaultNumberOfGuests;
         }
-      this.numGuests =  numGuests;
-      this.foodType = foodType;
-      this.beverageType = beverageType;
-      this.entertainmentType = entertainmentType;
+        this.numGuests = numGuests;
+        this.foodType = foodType;
+        this.beverageType = beverageType;
+        this.entertainmentType = entertainmentType;
     }
 
     public void setEntertainmentType(EntertainmentType entertainmentType) {
@@ -116,6 +171,15 @@ public class Event {
         return numGuests * (calculateFoodPrice() + calculateBeveragePrice() + calculateEntertainmentPrice());
     }
 
+    @Override
+    public String toString() {
+        return "Here is your event details: " +
+                "number of guests is : " + numGuests +
+                " people, food choice is " + foodType.value() +
+                ", beverage choice is " + beverageType.value() +
+                ", entertainment option is " + entertainmentType.value();
+    }
+
     public double specialOffers(String couponCode) {
         double discount = 0;
         if (numGuests >= 150 && foodType == FoodType.FULL_DINNER && beverageType == BeverageType.ALCOHOLIC_BEVERAGES_AND_SOFT_DRINKS) {
@@ -127,13 +191,11 @@ public class Event {
             if (couponCode.equals("SAVE40")) {
                 discount = 40;
             }
-        } else if(couponCode.equals("q")) {
+        } else if (couponCode.equals("q")) {
             System.out.println("No code entered.");
-        }
-        else {
+        } else {
             System.out.println("Not a valid coupon code.");
         }
         return discount;
     }
-
 }

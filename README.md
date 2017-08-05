@@ -7,11 +7,11 @@ _Event planning command line application that help with organizing an event base
 ## Development Specifications
 | Behavior      | Example Input         | Example Output        |
 | ------------- | ------------- | ------------- |
-| |  |           |
-|  |  |       |
-| |   |  |  
-| |   |
-|  |    |
+| User enters a number of guests| 10 |number of guests is 10 people|
+| User enters food type |salad bar | food choice is salad bar     |
+| User enters beverage type | juice bar | beverage choice is juice bar |  
+| User enters entertainment type| live music |entertainment option is live music|
+| User enters a coupon code | 10 guests, full dinner, live music, code 'SAVE40'| Your discount is $40|
 
 ## Setup/Installation Requirements
 _Download the following project from the gitHub by tapping "Download" or using 'git clone' from the terminal_

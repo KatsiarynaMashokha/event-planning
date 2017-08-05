@@ -1,10 +1,6 @@
 import models.Event;
-import models.Event.FoodType;
-import models.Event.BeverageType;
-import models.Event.EntertainmentType;
 import models.InputManager;
 
-import java.util.Scanner;
 
 /**
  * Created by katsiarynamashokha on 8/4/17.
@@ -23,6 +19,7 @@ public class Main {
         Event event = new Event(numGuests, foodType, beverageType, entertainmentType);
 
         double totalPrice = event.calculateTotalPrice();
+        System.out.println(event.toString());
         System.out.printf("Your current total is $%.2f\n", totalPrice);
         double discount = event.specialOffers(inputManager.getDiscountCode());
         totalPrice -= discount;
